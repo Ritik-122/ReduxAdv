@@ -38,7 +38,17 @@ const cartItemSlice = createSlice({
     }
   },
 });
+const uiSlice=createSlice({
+  name:'ui',
+  initialState:{alertmessage:{}},
+  reducers:{
+    showMessage(state,action){
+      state.alertmessage=action.payload
 
+
+    }
+  }
+})
 const showCartSlice = createSlice({
   name: "showCart",
   initialState: { isShown: false },
@@ -50,7 +60,8 @@ const showCartSlice = createSlice({
 });
 export const showCartActions = showCartSlice.actions;
 export const cartItemActions = cartItemSlice.actions;
+export const uiActions=uiSlice.actions
 const store = configureStore({
-  reducer: { showCart: showCartSlice.reducer, cartItem: cartItemSlice.reducer },
+  reducer: { showCart: showCartSlice.reducer, cartItem: cartItemSlice.reducer,ui:uiSlice.reducer },
 });
 export default store;

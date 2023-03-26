@@ -18,8 +18,8 @@ return (
       <header>
         <h3>{title}</h3>
         <div className={classes.price}>
-          ${price.toFixed(2)}{' '}
-          {/* <span className={classes.itemprice}>(${price.toFixed(2)}/item)</span> */}
+          ${price.toFixed(2)*quantity}{' '}
+          <span className={classes.itemprice}>(${price.toFixed(2)}/item)</span>
         </div>
       </header>
       <div className={classes.details}>
